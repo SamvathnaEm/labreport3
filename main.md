@@ -63,7 +63,7 @@ After some changes, the bug in the code has been fixed because we've created a n
 
 For the second part of the lab, I did research on grep command-line options and found four interesting alternate ways to use this command.
 
-1. ```-c```: count the number of lines that match the given string/pattern
+**1. ```-c```: count the number of lines that match the given string/pattern**
 
 ```
 DELL@DESKTOP-A31SQJ0 MINGW64 ~/Documents/GitHub/lab4/docsearch/technical (main)
@@ -82,7 +82,7 @@ grep: 911report: Is a directory
 
 We cannot use the command ```grep -c``` directly on the directory. Although it attempted to count the number of lines that have the word **American** within the ```911report``` directory, it returned an error message saying that ```911report``` is a directory and counts the number of lines as 0 because the ```911report``` directory does not contain the text content.
 
-2. ```-i```: enables to search for a string case insensitivity
+**2. ```-i```: enables to search for a string case insensitivity**
 
 ```
 DELL@DESKTOP-A31SQJ0 MINGW64 ~/Documents/GitHub/lab4/docsearch/technical (main)
@@ -107,7 +107,7 @@ grep: biomed: Is a directory
 
 The command ```grep -i``` searches for the case-insensitive occurrence of the word **"Reduction"** in the ```biomed``` directory. However, since the ```grep -i``` command is designed to search within the text files, it returned an error message instead because ```biomed``` is a directory.
 
-3. ```-n```: show the line number of the file with the line matched.
+**3. ```-n```: show the line number of the file with the line matched.**
 ```
 DELL@DESKTOP-A31SQJ0 MINGW64 ~/Documents/GitHub/lab4/docsearch/technical (main)
 $ grep -n "publications" plos/journal.pbio.0020001.txt
@@ -161,7 +161,7 @@ grep: plos: Is a directory
 
 The command ```grep -n``` searches for the occurrence of the word **"publications"** in the ```plos``` directory. However, since it is designed to search within the text files, it returned an error message instead because ```plos``` is a directory.
 
-4. ```-h```: display only the matched lines, but do not display any other information.
+**4. ```-h```: display only the matched lines, but do not display any other information.**
 ```
 DELL@DESKTOP-A31SQJ0 MINGW64 ~/Documents/GitHub/lab4/docsearch/technical (main)
 $ grep -h "Hungerford" government/Alcohol_Problems/DraftRecom-PDF.txt
