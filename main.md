@@ -71,7 +71,7 @@ $ grep -c "American" 911report/chapter-1.txt
 81
 ```
 
-The command ```grep -c``` is used to count the number of lines that contain the word **American** in ```chapter-1.txt``` file, which is located in the 911report directory. It is useful because it gives a quick determination of the frequency of the word appearing inline within the document.  
+Within the example above, the command ```grep -c``` is used to count the number of lines that contain the word **"American"** in the ```chapter-1.txt``` file, which is located in the ```911report``` directory. It is useful because it gives a quick calculation of the occurrences of the word **"American"** appearing inline within the document.  
 
 ```
 DELL@DESKTOP-A31SQJ0 MINGW64 ~/Documents/GitHub/lab4/docsearch/technical (main)
@@ -79,7 +79,8 @@ $ grep -c "American" 911report
 grep: 911report: Is a directory
 0
 ```
-We cannot use the command ```grep -c``` on the directory directly. Although it attempted to count the number of lines that have the word **American** within the ```911report``` directory, it returned an error message saying that ```911report``` is a directory and counts the number of lines as 0 because the ```911report``` directory does not contain the text content. One useful thing is that it helps identify that the target is a directory and not a file.
+
+We cannot use the command ```grep -c``` directly on the directory. Although it attempted to count the number of lines that have the word **American** within the ```911report``` directory, it returned an error message saying that ```911report``` is a directory and counts the number of lines as 0 because the ```911report``` directory does not contain the text content.
 
 2. ```-i```: enables to search for a string case insensitivity
 
@@ -95,15 +96,16 @@ $ grep -i "Reduction" biomed/1468-6708-3-3.txt
         serum cholesterol 'floor' below which reductions are
         = Myocardial Ischemia Reduction with Aggressive Cholesterol
 ```
-The command ```grep -i``` is used to search for a string case-insensitively from the ```1468-6708-3-3.txt``` file in the ```biomed``` directory. Therefore, it matches all the words like **"Reduction", "reduction"**, and **"reductions"**, regardless of the case, and prints the lines from the file ```1468-6708-3-3.txt``` that contain the word those words. It is useful because it helps us find the specific word contained in the lines of the text file quickly without any case sensitivity.  
+
+Within the example above, the command ```grep -i``` is used to search for a string case-insensitively of the word **"Reduction"** from the ```1468-6708-3-3.txt``` file in the ```biomed``` directory. Therefore, it matches all the words like **"Reduction", "reduction"**, and **"reductions"**, regardless of the case, and prints all the matched lines that contain those words. It is useful because it enables us to quickly locate specific words contained in the lines of the text file without any case sensitivity.
 
 ```
 DELL@DESKTOP-A31SQJ0 MINGW64 ~/Documents/GitHub/lab4/docsearch/technical (main)
 $ grep -i "Reduction" biomed
 grep: biomed: Is a directory
 ```
-In the ```biomed``` directory, the command ```grep -i``` searches for the case-insensitive occurrence of the word **"Reduction"**. However, since it is designed to search within the text files, it returned an error message instead because ```biomed``` is a directory.
 
+The command ```grep -i``` searches for the case-insensitive occurrence of the word **"Reduction"** in the ```biomed``` directory. However, since the ```grep -i``` command is designed to search within the text files, it returned an error message instead because ```biomed``` is a directory.
 
 3. ```-n```: show the line number of the file with the line matched.
 ```
@@ -148,13 +150,15 @@ $ grep -n "publications" plos/journal.pbio.0020001.txt
 220:        publications, especially when corrected for the amount of money available in research and
 225:        publications as a measure of scientific output, particularly if these publications can
 ```
-When we run ```grep -n``` on ```journal.pbio.0020001.txt``` in the ```plos``` directory, it searches for the word **"publications"** and prints out the lines that contain it, along with line numbers. It is useful because it displays comprehensive information regarding the line that contains the specific words we search and the line numbers, which are easy to reference and navigate within the text file.
+
+Within the example above, the command ```grep -n``` searches for the word **"publications"** in the ```journal.pbio.0020001.txt``` file, which is located in the ```plos``` directory, and prints out the lines that contain that word, along with the line numbers. It is useful because it displays comprehensive information regarding the line that contains the specific words we search and the line numbers, which are easy to reference and navigate within the text file.
 
 ```
 DELL@DESKTOP-A31SQJ0 MINGW64 ~/Documents/GitHub/lab4/docsearch/technical (main)
 $ grep -n "publications" plos
 grep: plos: Is a directory
 ```
+
 The command ```grep -n``` searches for the occurrence of the word **"publications"** in the ```plos``` directory. However, since it is designed to search within the text files, it returned an error message instead because ```plos``` is a directory.
 
 4. ```-h```: display only the matched lines, but do not display any other information.
@@ -175,7 +179,8 @@ $ grep -h "Hungerford" government/Alcohol_Problems/DraftRecom-PDF.txt
         Hungerford thought that work in the ED needed a higher priority
         proposed recommendations, Hungerford asked if they had general
 ```
-When we run ```grep -h``` on ```DraftRecom-PDF.txt``` in the ```government/Alcohol_Problems``` directory, it searches for the occurrences of the word **"Hungerford"** and prints out the matched lines that contain that word without displaying any other information like filenames. It is useful because it only displays the lines containing the word we want to find within the text file without displaying any other information.
+
+Within the example above, the command ```grep -h``` searches for the word **"Hungerford"** in the ```DraftRecom-PDF.txt``` file, which is located in the ```government/Alcohol_Problems``` directory, and prints out the matched lines that contain that word without displaying any other information like filenames. It is useful because it only displays the lines containing the word we want to find within the text file without displaying any other information.
 
 ```
 DELL@DESKTOP-A31SQJ0 MINGW64 ~/Documents/GitHub/lab4/docsearch/technical (main)
