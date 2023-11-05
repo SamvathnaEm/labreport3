@@ -187,7 +187,7 @@ DELL@DESKTOP-A31SQJ0 MINGW64 ~/Documents/GitHub/lab4/docsearch/technical (main)
 $ grep -h "Hungerford" government/Alcohol_Problems
 grep: government/Alcohol_Problems: Is a directory
 ```
-The command ```grep -h``` searches for the occurrence of the word **"publications"** in the ```government/Alcohol_Problems``` directory. However, since it is designed to search within the text files, it returned an error message instead because ```government/Alcohol_Problems``` is a directory.
+The command ```grep -h``` searches for the occurrence of the word **"Hungerford"** in the ```government/Alcohol_Problems``` directory. However, since it is designed to search within the text files, it returned an error message instead because ```government/Alcohol_Problems``` is a directory.
 
 ## Work Cited
 “Grep Command in Unix/Linux", *www.geeksforgeeks.org/grep-command-in-unixlinux/amp/*. Accessed 5 Nov. 2023. 
