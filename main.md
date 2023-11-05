@@ -61,4 +61,61 @@ After some changes, the bug in the code has been fixed because we've created a n
 
 # Part 2 - Researching Commands
 
+For the second part of the lab, I researched grep command-line options and found four interesting alternate ways to use this command.
 
+1. -c: count the number of lines that match the given string/pattern
+
+```
+DELL@DESKTOP-A31SQJ0 MINGW64 ~/Documents/GitHub/lab4/docsearch/technical (main)
+$ grep -c "American" 911report/chapter-1.txt
+81
+```
+
+The command ```grep -c``` is used to count the number of lines that contain the word **American** in ```chapter-1.txt``` file, which is located in the 911report directory. It is useful because it gives a quick determination of the frequency of the word within the document.  
+
+```
+DELL@DESKTOP-A31SQJ0 MINGW64 ~/Documents/GitHub/lab4/docsearch/technical (main)
+$ grep -c "American" 911report
+grep: 911report: Is a directory
+0
+```
+We cannot use the command ```grep -c``` on the directory directly. Although it attempted to count the number of lines that have the word **American** within the ```911report``` directory, it returned an error message saying that ```911report``` is a directory and counts the number of lines as 0 since the ```911report``` directory does not contain the text content. One useful thing is that it helps identify that the target is a directory and not a file.
+
+2. -i: enables to search for a string case insensitivity
+
+```
+DELL@DESKTOP-A31SQJ0 MINGW64 ~/Documents/GitHub/lab4/docsearch/technical (main)
+$ grep -i "Reduction" biomed/1468-6708-3-3.txt
+        Ischemia Reduction with Aggressive Cholesterol Lowering
+        2.6% absolute reduction in the risk of the primary endpoint
+        reduction was primarily driven by the 2.2% absolute
+        reduction in incidence of emergent rehospitalization for
+        concern that statin-mediated reductions in vascular smooth
+        demonstrates significant reductions in the incidence of
+        serum cholesterol 'floor' below which reductions are
+        = Myocardial Ischemia Reduction with Aggressive Cholesterol
+```
+
+
+```
+DELL@DESKTOP-A31SQJ0 MINGW64 ~/Documents/GitHub/lab4/docsearch/technical (main)
+$ grep -i "Reduction" biomed
+grep: biomed: Is a directory
+```
+
+3. -l: display the file names that contain the given string/pattern.
+```
+
+```
+
+```
+
+```
+4. -n: show the line number of file with the line matched.
+```
+
+```
+
+```
+
+```
