@@ -26,9 +26,11 @@ public void testReverseInPlace1()
 ```
 * The symptom, as the output of running the tests
 
-![Image](symptoms(1).png)
+The below screenshot proves that when ```input1 = { 2 }```, ```testReverseInPlace1()``` does not fail; hence, it is not a failure-inducing input. However, when ```input1 = {1, 2, 3 }```; ```testReverseInPlace()``` does fail, and therefore ```{1, 2, 3 }``` is failure-inducing input.
 
-As a result of running the tests with the two inputs above, we see a symptom for testReverseInPlace() due to the last element ending up being 3 instead of 1 as the expected result. In short, the input array was changed to {3,2,3} instead of {3,2,1}.
+![Image](new_symptom.png)
+
+As a result of running the tests with the two inputs above, we see a symptom for ```testReverseInPlace()``` due to the last element ending up being 3 instead of 1 as the expected result. In short, the input array was changed to {3,2,3} instead of {3,2,1}.
 
 * The bug, as the before-and-after code change required to fix it 
 
@@ -46,18 +48,17 @@ In this original code, the ```reverseInPlace``` method is prompted to change the
 
 **After code change**
 ```
-static void reverseInPlace(int[] arr)
-{
-  int[] origin_array = arr.clone();
-    
-  for(int i = 0; i < arr.length; i += 1) 
+  static void reverseInPlace(int[] arr)
   {
-    arr[i] = origin_array[arr.length - i - 1];
+    for(int i = 0; i < arr.length/2; i += 1)
+    {
+      int temp = arr[i];
+      arr[i] = arr[arr.length - i -1];
+      arr[arr.length - i -1] = temp;
+    }
   }
-}
 ```
-
-After some changes, the bug in the code has been fixed because we've created a new array called ```origin_array```, which stores all the original input values of the array ```arr``` through the ```clone()``` method. By doing this, the original input values of the array ```arr``` have been preserved before it is being reversed. Therefore, it will be reversed correctly based on the original values stored in ```origin_array```.
+After some changes, 
 
 # Part 2 - Researching Commands
 
