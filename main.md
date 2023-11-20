@@ -44,7 +44,7 @@ static void reverseInPlace(int[] arr)
   }
 }
 ```
-In this original code, the ```reverseInPlace``` method is prompted to change the input array ```arr``` to be in reversed order. However, the bug occurs since we are overwriting the original values of the same array. Through each iteration, we are using the same array ```arr``` to store the reversed values, and therefore, the array ```arr``` will be incorrectly reversed. 
+In this original code, the ```reverseInPlace``` method is prompted to change the input array ```arr``` to be in reversed order. However, the bug occurs since we are overwriting the original values of the elements in the array before completing the reversal process. Even though, through each iteration, the element ```arr[i]``` is set to be equal to ```arr[arr.length - i - 1]```, this operation does not preserve the original values of ```arr[i]```, leading to an incorrect result, particularly after looping to the midpoint of the array. 
 
 **After code change**
 ```
@@ -52,13 +52,13 @@ In this original code, the ```reverseInPlace``` method is prompted to change the
   {
     for(int i = 0; i < arr.length/2; i += 1)
     {
-      int temp = arr[i];
+      int tp = arr[i];
       arr[i] = arr[arr.length - i -1];
-      arr[arr.length - i -1] = temp;
+      arr[arr.length - i -1] = tp;
     }
   }
 ```
-After some changes, 
+After some changes, the new code only traverses the array up to the midpoint and swaps elements from opposite ends of the array; it also has a ```tp``` variable to temporarily hold each element's value in the array during the swap process. Therefore, this fix does address the issues because it helps to ensure that each element in the array is correctly positioned in its reversed spot without overwriting any values. In addition, swapping elements in the array doesn't require us to loop through each element in the entire array; we can just loop through the first half of the elements.
 
 # Part 2 - Researching Commands
 
